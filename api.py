@@ -5,6 +5,7 @@ from calculator import calculate_statistics
 
 
 app = FastAPI()
+app.openapi_version = "3.0.2"
 
 
 class StatisticsRequest(BaseModel):
