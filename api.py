@@ -6,6 +6,9 @@ from calculator import calculate_statistics
 
 app = FastAPI()
 app.openapi_version = "3.0.2"
+app.servers = [
+    {"url": "https://python-tool-zhwh.onrender.com"}
+]
 
 
 class StatisticsRequest(BaseModel):
