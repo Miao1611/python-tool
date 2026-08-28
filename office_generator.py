@@ -30,7 +30,7 @@ def create_word_document(
     title_run = title_paragraph.add_run(title)
     title_run.bold = True
     title_run.font.name = "Arial"
-    title_run._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft YaHei")
+    title_run._element.get_or_add_rPr().get_or_add_rFonts().set(qn("w:eastAsia"), "Microsoft YaHei")
     title_run.font.size = Pt(20)
 
     document.add_paragraph()
@@ -48,7 +48,7 @@ def create_word_document(
         f"由 AI 办公工具生成 · {datetime.now().strftime('%Y-%m-%d %H:%M')}"
     )
     footer_run.font.size = Pt(9)
-    footer_run._element.rPr.rFonts.set(qn("w:eastAsia"), "Microsoft YaHei")
+    footer_run._element.get_or_add_rPr().get_or_add_rFonts().set(qn("w:eastAsia"), "Microsoft YaHei")
 
     filename = f"document_{datetime.now().strftime('%Y%m%d_%H%M%S')}.docx"
     output_path = output_dir / filename
